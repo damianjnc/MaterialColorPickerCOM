@@ -15,15 +15,16 @@ class Palette extends Component {
     this.setState({ format: val });
   };
   render() {
-    const { colors, emoji, paletteName, id, moreUrl } = this.props.palette;
+    const { colors, emoji, paletteName, id } = this.props.palette;
     const { level, format } = this.state;
     const colorBoxes = colors[level].map(color => (
       <ColorBox
+        showLink={true}
         id={color.id}
         background={color[format]}
         name={color.name}
         key={color.id}
-        moreUrl={moreUrl}
+        moreUrl={`/palette/${id}/${color.id}`}
       />
     ));
     return (
