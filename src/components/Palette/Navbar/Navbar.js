@@ -16,7 +16,7 @@ class Navbar extends Component {
         open: false
     }
     handleFormatChange = e => {
-        this.setState({format: e.target.value, open:true});
+        this.setState({format: e.target.value, open: true});
         this.props.handleChange(e.target.value);
     }
     closeSnackbar = () => {
@@ -30,12 +30,13 @@ class Navbar extends Component {
                 <div className='logo'>
                     <a href='/'>MaterialColorPickerCOM</a>
                 </div>
-                <div className='container'>
+                {this.props.showingAllColors && (<div className='container'>
                     <span>Level: {level}</span>
                     <div className='slider'>
                         <Slider defaultValue={level} min={100} max={900} onAfterChange={changeLevel} step={100}/>
                     </div>
-                </div>
+                </div>)}
+
                 <div className='select-container'>
                     <Select value={this.state.format} onChange={this.handleFormatChange}>
                         <MenuItem value='hex'>Hex #fffff</MenuItem>
