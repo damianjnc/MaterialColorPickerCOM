@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MiniPalette from "../MiniPalette/MiniPalette";
 import { withStyles } from "@material-ui/styles";
-import { resolveProjectReferencePath } from "typescript";
 
 const styles = {
   root: {
@@ -48,6 +47,7 @@ class PaletteList extends Component {
           <div className={classes.palettes}>
             {palettes.map(palette => (
               <MiniPalette
+                  key={palette.id}
                 {...palette}
                 handleClick={() => this.goToPalette(palette.id)}
               />

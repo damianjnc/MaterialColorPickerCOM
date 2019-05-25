@@ -21,7 +21,7 @@ class Palette extends Component {
         const {level, format} = this.state;
         const colorBoxes = colors[level].map(color => (
             <ColorBox
-                showLink={true}
+                showingFullPalette
                 id={color.id}
                 background={color[format]}
                 name={color.name}
