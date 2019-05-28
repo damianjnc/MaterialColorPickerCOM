@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+
 import Palette from "./components/Palette/Palette";
 import seedColors from "./components/seedColors";
 import { generatePalette } from "./components/colorHelpers";
 import PaletteList from "./components/PaletteList/PaletteList";
 import SingleColorPalette from "./components/SingleColorPalette/SingleColorPalette";
+import NewPalette from './components/NewPalette/NewPalette';
 
 class App extends Component {
   findPalette = id => {
@@ -16,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <Switch>
+        <Route exact path="/palette/new" render={() => <NewPalette/>} />
         <Route
           exact
           path="/palette/:paletteId/:colorId"
