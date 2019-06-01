@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa4dde00-ad8a-480a-98ed-fca2cbb19a23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/NewPalette/DraggableColor/DraggableColorList/DraggableColorBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NewPalette/DraggableColor/DraggableColorList/DraggableColorList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewPalette/DraggableColorBox/DraggableColorBox.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NewPalette/NewPalette.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewPalette/NewPalette.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ColorBoxStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ColorBoxStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/MiniPaletteStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/MiniPaletteStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/NavbarStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/NavbarStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/PaletteFooterStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/PaletteFooterStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/PaletteListStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/PaletteListStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/SingleColorStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/SingleColorStyles.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/NewPalette/NewPalette.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="157" column="76" selection-start-line="157" selection-start-column="76" selection-end-line="157" selection-end-column="76" />
+            <state relative-caret-position="231">
+              <caret line="257" column="40" selection-start-line="257" selection-start-column="40" selection-end-line="257" selection-end-column="40" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -281,10 +268,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68994000" />
+    <option name="totallyTimeSpent" value="70900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24289985" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -435,8 +423,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/NewPalette/NewPalette.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="157" column="76" selection-start-line="157" selection-start-column="76" selection-end-line="157" selection-end-column="76" />
+        <state relative-caret-position="231">
+          <caret line="257" column="40" selection-start-line="257" selection-start-column="40" selection-end-line="257" selection-end-column="40" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

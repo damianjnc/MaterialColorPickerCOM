@@ -77,6 +77,11 @@ const styles = theme => ({
 });
 
 class NewPalette extends Component {
+
+  static defaultProps = {
+    maxColors: 20
+  };
+
   state = {
     open: true,
     currentColor: "teal",
@@ -156,12 +161,16 @@ class NewPalette extends Component {
 
   addRandomColor = () => {
     const allColors = this.props.palettes.map(colors => colors.colors).flat();
-    console.log(allColors);
+    const rand = Math.floor(Math.random()*allColors.length);
+    const randomColor = allColors[rand];
+    console.log(randomColor);
+    this.setState({colors: [...this.state.colors, randomColor]})
   }
 
   render() {
     const { classes } = this.props;
     const { open } = this.state;
+    const fullPalette = this.state.colors.length >= this.props.maxColors;
 
     return (
       <div className={classes.root}>
@@ -223,7 +232,7 @@ class NewPalette extends Component {
             <Button color="secondary" variant="contained" onClick={this.clearColors}>
               Clear Palette
             </Button>
-            <Button color="primary" variant="contained" onClick={this.addRandomColor}>
+            <Button disabled={fullPalette} color="primary" variant="contained" onClick={this.addRandomColor}>
               Random Color
             </Button>
           </div>
@@ -246,10 +255,11 @@ class NewPalette extends Component {
             <Button
               color="primary"
               type="submit"
-              style={{ backgroundColor: this.state.currentColor }}
+              style={{ backgroundColor: fullPalette ? 'grey' : this.state.currentColor }}
               variant="contained"
+              disabled={fullPalette}
             >
-              Add Color
+              {fullPalette ? 'Palette is Full' : 'Add Color'}
             </Button>
           </ValidatorForm>
         </Drawer>
