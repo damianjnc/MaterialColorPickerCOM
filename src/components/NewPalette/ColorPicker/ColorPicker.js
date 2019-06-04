@@ -11,6 +11,18 @@ import {ChromePicker} from "react-color";
 import {Button} from "@material-ui/core";
 import {arrayMove} from "react-sortable-hoc";
 
+const styles ={
+    picker:{
+        marginTop: '2rem'
+    },
+    colorButton:{
+        width: '100%',
+        padding: '1rem',
+        marginTop: '1rem',
+        fontSize: '2rem'
+    }
+}
+
 class ColorPicker extends Component {
     state = {
         currentColor: "teal",
@@ -48,10 +60,12 @@ class ColorPicker extends Component {
     }
 
     render() {
-        const {fullPalette} = this.props;
+        const {fullPalette, classes} = this.props;
         return (
             <div>
                 <ChromePicker
+                    className={classes.picker}
+                    width='100%'
                     color={this.state.currentColor}
                     onChangeComplete={this.updateCurrentColor}
                 />
@@ -68,6 +82,7 @@ class ColorPicker extends Component {
                         ]}
                     />
                     <Button
+                        className={classes.colorButton}
                         color="primary"
                         type="submit"
                         style={{
@@ -84,4 +99,4 @@ class ColorPicker extends Component {
     }
 }
 
-export default ColorPicker;
+export default withStyles(styles)(ColorPicker);
