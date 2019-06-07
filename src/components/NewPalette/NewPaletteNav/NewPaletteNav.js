@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Button } from "@material-ui/core";
+import Modal from "../Modal/Modal";
 
 const drawerWidth = 390;
 
@@ -46,14 +47,6 @@ class NewPaletteNav extends Component {
     newPaletteName: ""
   };
 
-  componentDidMount() {
-    ValidatorForm.addValidationRule("isPaletteNameUnique", value =>
-      this.props.palettes.every(
-        ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
-      )
-    );
-  }
-
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -84,26 +77,6 @@ class NewPaletteNav extends Component {
             </Typography>
           </Toolbar>
           <div className={classes.navButtons}>
-            <ValidatorForm
-              onSubmit={() =>
-                this.props.handleSubmit(this.state.newPaletteName)
-              }
-            >
-              <TextValidator
-                label="Palette Name"
-                value={this.state.newPaletteName}
-                name="newPaletteName"
-                onChange={this.handleChange}
-                validators={["required", "isPaletteNameUnique"]}
-                errorMessages={[
-                  "Palette name required",
-                  "Palette name must be unique"
-                ]}
-              />
-              <Button variant="contained" color="primary" type="submit">
-                Save Palette
-              </Button>
-            </ValidatorForm>
             <Link to="/" style={{ textDecoration: "none" }}>
               <Button color="secondary" variant="contained">
                 Go Back
