@@ -14,7 +14,7 @@ export default {
     flexWrap: "wrap"
   },
   nav: {
-    display: "fl    ex",
+    display: "flex",
     width: "100%",
     justifyContent: "space-between",
     color: "white",
