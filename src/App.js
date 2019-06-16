@@ -9,15 +9,35 @@ import SingleColorPalette from "./components/SingleColorPalette/SingleColorPalet
 import NewPalette from "./components/NewPalette/NewPalette";
 
 class App extends Component {
-  state = { palettes: seedColors };
+
+  static defaultProps = { initStorege: JSON.parse(localStorage.getItem('palettes'))}
+
+
+  state = { palettes: this.props.initStorege || seedColors };
+
   findPalette = id => {
     return this.state.palettes.find(function(element) {
       return element.id === id;
     });
   };
+
   savePalette = newPalette => {
-    this.setState({ palettes: [...this.state.palettes, newPalette] });
+    this.setState({ palettes: [...this.state.palettes, newPalette] }, this.saveToLocalStorage);
+
   };
+
+  removePalette = (id) => {
+    this.setState(prevState => ({
+      palettes: prevState.palettes.filter(palette =>
+        palette.id !== id
+      )
+    }), this.saveToLocalStorage);
+
+  }
+
+  saveToLocalStorage = () => {
+    window.localStorage.setItem('palettes', JSON.stringify(this.state.palettes));
+  }
 
   render() {
     return (
@@ -45,7 +65,11 @@ class App extends Component {
           exact
           path="/"
           render={routeProps => (
-            <PaletteList palettes={this.state.palettes} {...routeProps} />
+            <PaletteList 
+                palettes={this.state.palettes} 
+                removePalette={this.removePalette} 
+                {...routeProps} 
+            />
           )}
         />
         <Route
@@ -60,9 +84,7 @@ class App extends Component {
           )}
         />
       </Switch>
-      /* <div>
-              <Palette palette={generatePalette(seedColors[4])} />
-            </div> */
+
     );
   }
 }

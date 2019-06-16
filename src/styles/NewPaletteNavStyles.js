@@ -1,10 +1,11 @@
 import {drawerWidth} from "../constants";
 
-const drawerWidth = drawerWidth;
-
 const styles = theme => ({
   root: {
     display: "flex"
+  },
+  hide: {
+    display: "none"
   },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
