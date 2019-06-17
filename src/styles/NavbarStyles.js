@@ -1,4 +1,4 @@
-
+import mySizes from "./MediaQueries";
 
 export default {
   Navbar: {
@@ -20,6 +20,9 @@ export default {
     "& a": {
       textDecoration: "none",
       color: "black"
+    },
+    [mySizes.down("extraSmall")]: {
+      display: "none"
     }
   },
   slider: {
@@ -41,6 +44,9 @@ export default {
       height: "13px",
       marginLeft: "-7px",
       marginTop: "-3px"
+    },
+    [mySizes.down("medium")]: {
+      width: "150px"
     }
   },
   selectContainer: {

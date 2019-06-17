@@ -1,4 +1,5 @@
-import {drawerWidth} from "../constants";
+import { drawerWidth } from "../constants";
+import mySizes from "./MediaQueries";
 
 const styles = theme => ({
   root: {
@@ -14,7 +15,7 @@ const styles = theme => ({
     }),
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: "center",
     height: "64px"
   },
   appBarShift: {
@@ -29,9 +30,17 @@ const styles = theme => ({
     marginLeft: 12,
     marginRight: 20
   },
-  navButtons: {marginRight: '1rem'},
-  button:{
-    margin: '0 0.5rem'
+  navButtons: {
+    marginRight: "1rem",
+    [mySizes.down("extraSmall")]: {
+      marginRight: "0.5rem"
+    }
+  },
+  button: {
+    margin: "0 0.5rem",
+    [mySizes.down("extraSmall")]: {
+      margin: 0
+    }
   }
 });
 
