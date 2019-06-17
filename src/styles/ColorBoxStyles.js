@@ -1,4 +1,5 @@
 import chroma from "chroma-js";
+import mySizes from './MediaQueries';
 
 export default {
   colorBox: {
@@ -9,10 +10,26 @@ export default {
     position: "relative",
     cursor: "pointer",
     marginBottom: "-5px",
-    "&:hover button": {
-      opacity: 1
+    '&:hover button':{
+      opacity:1
+    },
+    [mySizes.down('large')]:{
+      width:'25%',
+      height: props => (props.showingFullPalette ? "20%" : "33.33333%"),
+
+    },
+    [mySizes.down('medium')]:{
+      width:'25%',
+      height: props => (props.showingFullPalette ? "10%" : "20%"),
+
+    },
+    [mySizes.down('extraSmall')]:{
+      width:'100%',
+      height: props => (props.showingFullPalette ? '5%' : '10%')
     }
   },
+  
+
   copyText: {
     color: props =>
       chroma(props.background).luminance() >= 0.65 ? "black" : "white"
@@ -103,7 +120,10 @@ export default {
       textAlign: "center",
       marginBottom: "0",
       padding: "1rem",
-      textTransform: "uppercase"
+      textTransform: "uppercase",
+      [mySizes.down('extraSmall')]:{
+        fontSize: '5rem'
+      }
     },
     "& p": {
       fontSize: "2rem",

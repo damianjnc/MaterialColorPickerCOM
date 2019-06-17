@@ -1,3 +1,6 @@
+import mySizes from './MediaQueries';
+
+
 export default {
   Palette: {
     height: "100vh",
@@ -37,6 +40,18 @@ export default {
       textTransform: "uppercase",
       border: "none",
       textDecoration: "none"
+    },
+    [mySizes.down('large')]:{
+      width: '25%',
+      height: '33.3333%'
+    },
+    [mySizes.down('medium')]:{
+      width: '50%',
+      height: '20%'
+    },
+    [mySizes.down('extraSmall')]:{
+      width: '100%',
+      height: '10%'
     }
-  }
+  } 
 };
