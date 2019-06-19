@@ -9,7 +9,7 @@ class MiniPalette extends Component {
 
   removePalette = event => {
     event.stopPropagation();
-    this.props.removePalette(this.props.id);
+   this.props.removePalette(this.props.id);
   }
 
   render(){

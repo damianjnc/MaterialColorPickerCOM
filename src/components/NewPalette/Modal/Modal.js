@@ -31,9 +31,9 @@ class Modal extends Component {
         this.props.handleSubmit({
             paletteName: this.state.newPaletteName,
             emoji: pickerObject.native
-        })
+        });
+            this.setState({phase: ''})
     }
-
 
     render() {
         const {handleClose} = this.props;
@@ -51,7 +51,6 @@ class Modal extends Component {
                     aria-labelledby="form-dialog-title"
                 >
                     <DialogTitle id="form-dialog-title">Create a Palette Name</DialogTitle>
-
                     <ValidatorForm
                         onSubmit={this.showPicker}
                     >
