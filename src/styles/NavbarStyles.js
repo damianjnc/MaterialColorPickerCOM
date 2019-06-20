@@ -45,7 +45,7 @@ export default {
       marginLeft: "-7px",
       marginTop: "-3px"
     },
-    [mySizes.down("medium")]: {
+    [mySizes.down("small")]: {
       width: "150px"
     }
   },

@@ -13,6 +13,7 @@ import DraggableColorList from "./DraggableColor/DraggableColorList/DraggableCol
 import NewPaletteNav from "./NewPaletteNav/NewPaletteNav";
 import ColorPicker from "./ColorPicker/ColorPicker";
 import styles from "../../styles/NewPaletteStyles";
+import seedColors from '../seedColors';
 
 class NewPalette extends Component {
     static defaultProps = {
@@ -21,7 +22,7 @@ class NewPalette extends Component {
 
     state = {
         open: true,
-        colors: this.props.palettes[0].colors
+        colors: seedColors[0].colors
     };
 
     handleDrawerOpen = () => {
@@ -69,9 +70,14 @@ class NewPalette extends Component {
 
     addRandomColor = () => {
         const allColors = this.props.palettes.map(colors => colors.colors).flat();
-        const rand = Math.floor(Math.random() * allColors.length);
-        const randomColor = allColors[rand];
-        console.log(randomColor);
+        let rand;
+        let randomColor;
+        let isDuplicate = true;
+        while(isDuplicate){
+            rand = Math.floor(Math.random() * allColors.length);
+            randomColor = allColors[rand];
+            isDuplicate = this.state.colors.some(color => color.name === randomColor.name);
+        }
         this.setState({colors: [...this.state.colors, randomColor]});
     };
 
